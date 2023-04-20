@@ -2,18 +2,20 @@ import pygame as pg
 
 
 class Rectangle:
-    def __init__(self,x=0,y=0,w=0,h=0,color=(192,192,192)):
+    def __init__(self,x=0,y=0,w=0,h=0,color = 'black'):
         self.x = x # Position X
         self.y = y # Position Y
         self.w = w # Width
         self.h = h # Height
         self.color = color # Height
+        self.defaultcolor = color
+        # print(color)
     def draw(self,screen):
         pg.draw.rect(screen,self.color,(self.x,self.y,self.w,self.h))
     def setColor(self,color):
         self.color = color
     def setColorDefault(self):
-        self.color = (192,192,192)
+        self.color = self.defaultcolor
     def posUpdate(self,x,y):
         self.x = self.x + x 
         self.y = self.y + y
